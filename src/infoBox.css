@@ -1,8 +1,154 @@
-.InfoBox{
-    text-align: center;
-}
-
-.cardContainer{
+.InfoBo {
+    height: 100vh; 
+    width: 80%;
+    margin: 0 6% 0 10%; 
+  }
+  
+  .Img {  
+    width: 100%;  
+    height: 50vh; 
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .Img img {  
+    width: 100%; /* Control the width of the image */
+    height: 100%; /* Fill the container with the image */
+  }
+  
+  .Details {
+    text-align: left;
+  }
+  
+  .City {
+    font-size: 3em;
+    position: relative;
+   
+  }
+  
+  .Flex {
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  p {
+    white-space: nowrap;
+  }
+  
+  .item {
+    flex-basis: 50%;
+  }
+  
+
+  
+  @media only screen and (min-width: 600px)and (max-width: 1000px) {
+    .InfoBo {
+      margin-left: 190px;
+    }
+    .Img {  
+      width: 90vw;  
+      height: 50vh; 
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+    
+    .Img img {  
+      width: 70%; 
+      height: 100% ;
+    }
+  
+  .City{
+    margin:1% 0 1% 0%; 
+   
+  }
+
+  .Flex {
+    font-size: 1rem;
+    margin: 0%;
+  
+  }
+
+
+  .City {
+    font-size: 1.5em;
+    position: relative;
+    margin-top: 20px;
+   
+  }
+
+  }
+  @media only screen and (min-width: 1000px) {
+    .InfoBo {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    
+     
+    }
+    .Img {  
+      width: 90vw;  
+      height: 50vh; 
+      margin-left: 10%;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+    
+    .Img img {  
+      width: 70%; 
+      height: 100% ;
+    }
+  
+  
+
+  .Flex {
+    font-size: 1rem;
+ }
+
+.Details{
+  margin-left: 10%;
 }
+  .City {
+    font-size: 1.5em;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 10%;
+   
+  }
+}
+  @media only screen and (max-width: 600px) {
+    .InfoBo {
+      margin-left: 100px;
+    }
+    .Img {  
+      width: 90vw;  
+      height: 40vh; 
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+    
+    .Img img {  
+      width: 70%; 
+      height: 100% ;
+     
+    }
+  }
+  .City{
+    margin:1% 0 1% 0%; 
+   
+  }
+
+  .Flex {
+    font-size: 1rem;}
+
+
+  .City {
+    font-size: 1.5em;
+    position: relative;
+    margin-top: 20px;
+   
+  }

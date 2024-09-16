@@ -4,15 +4,19 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import "./SearchBox.css"
 
+const apiKey = import.meta.env.VITE_API_BASE_APIKEY;
+
+
 export default function SearchBox({ updateInfo }) {
+    
     let [city, setCity] = useState("");
     let [err, setErr] = useState(false);
-
+   
     let getWeatherInfo = async () => {
         try {
             setErr(false); // Reset error state before fetching
 
-            const apiKey = '453824d85b3a4fd5af6120935242808';
+           
             let url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
     
             let response = await fetch(url);
@@ -27,22 +31,25 @@ export default function SearchBox({ updateInfo }) {
                 region: jsonResponse.location.region,
                 country: jsonResponse.location.country,
                 temp: jsonResponse.current.temp_c,
-                feelslike: jsonResponse.current.feelslike_c, // Corrected path
-                humidity: jsonResponse.current.humidity // Corrected path
+                feelslike: jsonResponse.current.feelslike_c, 
+                humidity: jsonResponse.current.humidity 
             };
 
             console.log(jsonResponse);
-            console.log(result);
+          
             return result;
     
         } catch (err) {
             setErr(true);
-            return null; // Return null if there's an error
+            return null; 
         }
     };
 
     let handleChange = (event) => {
         setCity(event.target.value);
+        
+        
+       
     };
 
     let handleSubmit = async (event) => {
@@ -54,6 +61,7 @@ export default function SearchBox({ updateInfo }) {
                 updateInfo(newInfo); // Only update if newInfo is valid
             }
             setCity("");
+         
         } catch (err) {
             setErr(true);
         }
@@ -61,6 +69,7 @@ export default function SearchBox({ updateInfo }) {
 
     return (
         <div className='SearchBox'>
+
             <form onSubmit={handleSubmit}>
                 <TextField 
                     id="city" 
